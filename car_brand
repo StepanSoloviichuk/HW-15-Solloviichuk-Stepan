@@ -1,0 +1,13 @@
+CREATE TABLE car_brands (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL
+);
+
+-- Заповнення таблиці даними
+INSERT INTO car_brands (title)
+VALUES
+    ('Toyota'),
+    ('BMW'),
+    ('Mercedes'),
+    ('Audi'),
+    ('Ford');
