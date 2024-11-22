@@ -1,0 +1,19 @@
+CREATE TABLE cars (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    carBrandId INT NOT NULL,
+    carModelId INT NOT NULL,
+    mileage INT NOT NULL DEFAULT 0,
+    initialMileage INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (carBrandId) REFERENCES car_brands(id) ON DELETE CASCADE,
+    FOREIGN KEY (carModelId) REFERENCES car_models(id) ON DELETE CASCADE
+);
+
+-- Заповнення таблиці даними
+INSERT INTO cars (userId, carBrandId, carModelId, mileage, initialMileage)
+VALUES
+    (1, 1, 1, 5000, 0), -- John Doe -> Toyota Corolla
+    (2, 2, 2, 10000, 5000), -- Jane Smith -> BMW 320i
+    (3, 3, 5, 20000, 15000), -- Alex Johnson -> Mercedes E-Class
+    (4, 5, 9, 12000, 8000); -- Emily Davis -> Ford Mustang
